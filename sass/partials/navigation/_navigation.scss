@@ -1,0 +1,20 @@
+.menu {
+  @include reset;
+  font-weight: $bold;
+  .menu-item {
+    display: inline-block;
+    a {
+      line-height: 1em;
+      padding: .5em;
+      border: 1px solid transparentize(#fff, 1);
+      @include transition(.2s, border);
+      &:hover, &.is-active {
+        border: 1px solid;
+      }
+    }
+  }
+}
+
+.menu--account {
+  float: right;
+}

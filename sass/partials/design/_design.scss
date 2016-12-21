@@ -2,3 +2,26 @@
   max-width: 75em;
   margin: auto;
 }
+
+.site-branding {
+  .site-branding__text {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    .site-name {
+      @include typecsset-font-size(28px, 0);
+      line-height: 1;
+      @media screen and ($bp-larger-than-phablet){
+        @include typecsset-font-size(32px, 0);
+      }
+    }
+    .site-slogan {
+      clear: both;
+      font-size: 80%;
+      font-style: italic;
+    }
+  }
+  img {
+    max-width: 3.5em;
+  }
+}

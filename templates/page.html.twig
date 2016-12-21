@@ -44,34 +44,40 @@
 #}
 <div id="page-wrapper">
   <div class="u-max-full-width" id="page">
-    <header id="header" class="pad2" role="heading">
+    <header id="header" class="pad1" role="heading">
       <div class="container">
         <div class="row">
-          <div class="two columns">{{ page.branding }}</div>
-          <div class="ten columns">{{ page.header }}</div>
+          <div class="four columns site-branding">{{ page.branding }}</div>
+          <div class="eight columns site-heading">{{ page.header }}</div>
         </div>
       </div>
     </header>
+
+    {#Featured region#}
     {% if page.featured %}
       <section class="u-full-width mv2">
         <div class="hero"> {{ page.featured }}</div>
       </section>
     {% endif %}
+
+    {#Set content and bottom content classes#}
     {% set content_classes = [
     'layout-content',
     page.left_sidebar and page.right_sidebar ? 'one-third column',
-    page.left_sidebar and page.right_sidebar is empty ? 'two-third column',
-    page.right_sidebar and page.left_sidebar is empty ? 'two-third column',
+    page.left_sidebar and page.right_sidebar is empty ? 'two-thirds column',
+    page.right_sidebar and page.left_sidebar is empty ? 'two-thirds column',
     page.left_sidebar is empty and page.right_sidebar is empty ? 'u-full-width'
     ] %}
     {% set content_bottom_classes = [
     'layout-content',
     'layout-content-bottom',
     page.left_sidebar_bottom and page.right_sidebar_bottom ? 'one-third column',
-    page.left_sidebar_bottom and page.right_sidebar_bottom is empty ? 'two-third column',
-    page.right_sidebar_bottom and page.left_sidebar_bottom is empty ? 'two-third column',
+    page.left_sidebar_bottom and page.right_sidebar_bottom is empty ? 'two-thirds column',
+    page.right_sidebar_bottom and page.left_sidebar_bottom is empty ? 'two-thirds column',
     page.left_sidebar_bottom is empty and page.right_sidebar_bottom is empty ? 'u-full-width'
     ] %}
+
+    {#Main container#}
     <section class="container content-top" id="main-content">
       <div class="row">
         {% if page.highlighted %}
@@ -79,7 +85,7 @@
             {{ page.highlighted }}
           </div>
         {% endif %}
-        <div class="container u-full-width">
+        <div class="container u-full-width pad2">
           <div class="row">
             {% if page.left_sidebar %}
               <aside class="one-third column sidebar">
@@ -102,7 +108,7 @@
       </div>
     </section>
     {% if page.highlighted_bottom or page.content_bottom %}
-      <section class="container content-bottom" id="content-bottom">
+      <section class="container content-bottom pad2" id="content-bottom">
         <div class="row">
           {% if page.highlighted %}
             <div class="highlighted highlighted-bottom mv1 pad1">
@@ -116,7 +122,7 @@
                   {{ page.left_sidebar_bottom }}
                 </aside>
               {% endif %}
-              <div {{ content_attributes.addClass(content_bottom_classes) }}>
+              <div {{ attributes.addClass(content_bottom_classes) }}>
                 {{ page.content_bottom }}
               </div>
               {% if page.right_sidebar_bottom %}
@@ -130,12 +136,14 @@
       </section>
     {% endif %}
 
+    {#Featured bottom#}
     {% if page.featured_bottom %}
       <section class="u-full-width mv2 zero-margin-bottom">
         <div class="hero featured-bottom"> {{ page.featured_bottom }}</div>
       </section>
     {% endif %}
 
+    {#Set footer classes#}
     {% set footer_classes = [
     'footer-blocks',
     page.footer_first and page.footer_second and page.footer_third and page.footer_fourth ? 'three columns',
@@ -152,6 +160,8 @@
     page.footer_first is empty and page.footer_second is empty and page.footer_third and page.footer_fourth is empty ? 'u-full-width',
     page.footer_first is empty and page.footer_second and page.footer_third is empty and page.footer_fourth is empty ? 'u-full-width',
     ] %}
+
+    {#Footer region#}
     <footer class="footer pad2 mv1 zero-margin-bottom" id="footer">
       <div class="container">
         <div class="id">

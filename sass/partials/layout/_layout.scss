@@ -21,3 +21,13 @@ header {
   @include border(transparentize(#fff, 1), .1em, solid);
   background: $light-grey;
 }
+
+.site-heading {
+  .region-header {
+    > div, > nav {
+      display: inline-block;
+      vertical-align: top;
+      margin: 1em 0;
+    }
+  }
+}
