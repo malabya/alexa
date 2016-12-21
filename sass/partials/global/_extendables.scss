@@ -1,0 +1,11 @@
+.container {
+  max-width: $grid-width;
+  width: 95%;
+  padding: 0;
+  @media screen and ($bp-larger-than-desktophd){
+    width: 100%;
+  }
+  &.u-full-width{
+    width: 100% !important;
+  }
+}

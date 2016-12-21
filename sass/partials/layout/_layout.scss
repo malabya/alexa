@@ -1,0 +1,23 @@
+html, body {
+  max-width: 100%;
+}
+
+body {
+  @include typecsset-font-size(14px);
+  color: $black;
+  font-family: $body-font;
+  font-weight: $normal;
+  word-wrap: break-word;
+  @media ($bp-larger-than-phablet) {
+    @include typecsset-font-size(16px);
+  }
+}
+
+header {
+  @include border(transparentize(#fff, 1), .1em, solid);
+}
+
+#footer {
+  @include border(transparentize(#fff, 1), .1em, solid);
+  background: $light-grey;
+}

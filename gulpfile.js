@@ -19,6 +19,7 @@ gulp.task('sass', function () {
                 }
             }))
         .pipe(sourcemaps.write())
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('css'))
         .pipe(filter('scss**/*.css')) // Filtering stream to only css files
         .pipe(browserSync.reload({stream:true}));

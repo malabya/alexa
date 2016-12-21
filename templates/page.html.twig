@@ -42,52 +42,147 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
-
-  <header role="banner">
-    {{ page.branding}}
-    {{ page.header }}
-  </header>
-  <div class="featured">
-    {{ page.featured }}
-    {{ page.highlighted }}
-  </div>
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar }}
-      </aside>
+<div id="page-wrapper">
+  <div class="u-max-full-width" id="page">
+    <header id="header" class="pad2" role="heading">
+      <div class="container">
+        <div class="row">
+          <div class="two columns">{{ page.branding }}</div>
+          <div class="ten columns">{{ page.header }}</div>
+        </div>
+      </div>
+    </header>
+    {% if page.featured %}
+      <section class="u-full-width mv2">
+        <div class="hero"> {{ page.featured }}</div>
+      </section>
+    {% endif %}
+    {% set content_classes = [
+    'layout-content',
+    page.left_sidebar and page.right_sidebar ? 'one-third column',
+    page.left_sidebar and page.right_sidebar is empty ? 'two-third column',
+    page.right_sidebar and page.left_sidebar is empty ? 'two-third column',
+    page.left_sidebar is empty and page.right_sidebar is empty ? 'u-full-width'
+    ] %}
+    {% set content_bottom_classes = [
+    'layout-content',
+    'layout-content-bottom',
+    page.left_sidebar_bottom and page.right_sidebar_bottom ? 'one-third column',
+    page.left_sidebar_bottom and page.right_sidebar_bottom is empty ? 'two-third column',
+    page.right_sidebar_bottom and page.left_sidebar_bottom is empty ? 'two-third column',
+    page.left_sidebar_bottom is empty and page.right_sidebar_bottom is empty ? 'u-full-width'
+    ] %}
+    <section class="container content-top" id="main-content">
+      <div class="row">
+        {% if page.highlighted %}
+          <div class="highlighted highlighted-top mv1 pad1">
+            {{ page.highlighted }}
+          </div>
+        {% endif %}
+        <div class="container u-full-width">
+          <div class="row">
+            {% if page.left_sidebar %}
+              <aside class="one-third column sidebar">
+                {{ page.left_sidebar }}
+              </aside>
+            {% endif %}
+            <div {{ content_attributes.addClass(content_classes) }}>
+              {% block content %}
+                <a id="main-content"></a>
+                {{ page.content }}
+              {% endblock %}
+            </div>
+            {% if page.right_sidebar %}
+              <aside class="one-third column sidebar">
+                {{ page.right_sidebar }}
+              </aside>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% if page.highlighted_bottom or page.content_bottom %}
+      <section class="container content-bottom" id="content-bottom">
+        <div class="row">
+          {% if page.highlighted %}
+            <div class="highlighted highlighted-bottom mv1 pad1">
+              {{ page.highlighted_bottom }}
+            </div>
+          {% endif %}
+          <div class="container u-full-width">
+            <div class="row">
+              {% if page.left_sidebar_bottom %}
+                <aside class="one-third column sidebar">
+                  {{ page.left_sidebar_bottom }}
+                </aside>
+              {% endif %}
+              <div {{ content_attributes.addClass(content_bottom_classes) }}>
+                {{ page.content_bottom }}
+              </div>
+              {% if page.right_sidebar_bottom %}
+                <aside class="one-third column sidebar">
+                  {{ page.right_sidebar_bottom }}
+                </aside>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
     {% endif %}
 
-  </main>
-  <div class="featured something">
-    {{ page.highlighted_bottom }}
-  </div>
-
-  <main role="main">
-    <a id="main-content-bottom" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-      {{ page.content_bottom }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_bottom %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_bottom }}
-      </aside>
+    {% if page.featured_bottom %}
+      <section class="u-full-width mv2 zero-margin-bottom">
+        <div class="hero featured-bottom"> {{ page.featured_bottom }}</div>
+      </section>
     {% endif %}
 
-  </main>
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
+    {% set footer_classes = [
+    'footer-blocks',
+    page.footer_first and page.footer_second and page.footer_third and page.footer_fourth ? 'three columns',
+    page.footer_first and page.footer_second and page.footer_third and page.footer_fourth is empty ? 'one-third column',
+    page.footer_first and page.footer_second and page.footer_third is empty and page.footer_fourth is empty ? 'one-half column',
+    page.footer_first and page.footer_second is empty and page.footer_third is empty and page.footer_fourth is empty ? 'u-full-width',
+    page.footer_first is empty and page.footer_second and page.footer_third and page.footer_fourth ? 'one-third column',
+    page.footer_first is empty and page.footer_second is empty and page.footer_third and page.footer_fourth ? 'one-half column',
+    page.footer_first is empty and page.footer_second is empty and page.footer_third is empty and page.footer_fourth ? 'u-full-width',
+    page.footer_first is empty and page.footer_second and page.footer_third is empty and page.footer_fourth ? 'one-half column',
+    page.footer_first is empty and page.footer_second and page.footer_third and page.footer_fourth is empty ? 'one-half column',
+    page.footer_first and page.footer_second is empty and page.footer_third and page.footer_fourth ? 'one-third column',
+    page.footer_first and page.footer_second and page.footer_third is empty and page.footer_fourth ? 'one-third column',
+    page.footer_first is empty and page.footer_second is empty and page.footer_third and page.footer_fourth is empty ? 'u-full-width',
+    page.footer_first is empty and page.footer_second and page.footer_third is empty and page.footer_fourth is empty ? 'u-full-width',
+    ] %}
+    <footer class="footer pad2 mv1 zero-margin-bottom" id="footer">
+      <div class="container">
+        <div class="id">
+          {% if page.footer_top %}
+            <div class="footer-top u-max-full-width pad1 zero-padd-top">
+              {{ page.footer_top }}
+            </div>
+          {% endif %}
+          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+            <div class="site-footer clearfix">
+              <div {{ attributes.addClass(footer_classes) }}>
+                {{ page.footer_first }}
+              </div>
+              <div {{ attributes.addClass(footer_classes) }}>
+                {{ page.footer_second }}
+              </div>
+              <div {{ attributes.addClass(footer_classes) }}>
+                {{ page.footer_third }}
+              </div>
+              <div {{ attributes.addClass(footer_classes) }}>
+                {{ page.footer_fourth }}
+              </div>
+            </div>
+          {% endif %}
+          {% if page.footer_bottom %}
+            <div class="footer-bottom u-max-full-width pad1 zero-padd-bottom">
+              {{ page.footer_bottom }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
     </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}
+  </div>
+</div>

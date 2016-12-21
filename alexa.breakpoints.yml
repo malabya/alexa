@@ -1,4 +1,4 @@
-alexa.narrow:
+alexa.mobile:
   label: narrow
   mediaQuery: ''
   weight: 1
@@ -10,7 +10,7 @@ alexa.wide:
   weight: 1
   multipliers:
     - 1x
-alexa.mobile:
+alexa.narrow:
   label: mobile
   mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
   weight: 1

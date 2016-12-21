@@ -15,8 +15,16 @@ regions:
   header: Header
   featured: Featured
   highlighted: Highlighted
-  sidebar: Sidebar
+  left_sidebar: Left Sidebar
+  right_sidebar: Right Sidebar
   highlighted_bottom: Highlighted bottom
   content_bottom: Content bottom
-  sidebar_bottom: Sidebar bottom
-  footer: Footer
+  left_sidebar_bottom: Left Sidebar bottom
+  right_sidebar_bottom: Right Sidebar bottom
+  featured_bottom: Featured bottom
+  footer_top: Footer top
+  footer_first: Footer first
+  footer_second: Footer second
+  footer_third: Footer third
+  footer_fourth: Footer fourth
+  footer_bottom: Footer bottom

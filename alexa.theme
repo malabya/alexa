@@ -147,7 +147,7 @@ function alexa_preprocess_menu_local_task(array &$variables) {
 function alexa_css_alter(&$css) {
     $theme_path = drupal_get_path('theme', 'formata');
   // Add googlefonts.
-    $googlefonts = '//fonts.googleapis.com/css?family=Merriweather:300,300italic,700,700italic,400,400italic|Merriweather+Sans:400,400italic,700,700italic,300italic,300';
+    $googlefonts = '//fonts.googleapis.com/css?family=Merriweather:300,700,400|Source+Sans+Pro:300,400,700';
     $css[$googlefonts] = array(
       'data' => $googlefonts,
       'type' => 'external',
