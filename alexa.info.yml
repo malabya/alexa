@@ -1,0 +1,22 @@
+name: Alexa
+type: theme
+description: A theme for technology bloggers and sites.
+package: Other
+core: 8.x
+libraries:
+  - alexa/global-styling
+
+base theme: classy
+#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+
+regions:
+  content: Content
+  branding: Branding
+  header: Header
+  featured: Featured
+  highlighted: Highlighted
+  sidebar: Sidebar
+  highlighted_bottom: Highlighted bottom
+  content_bottom: Content bottom
+  sidebar_bottom: Sidebar bottom
+  footer: Footer

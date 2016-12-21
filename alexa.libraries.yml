@@ -1,0 +1,16 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/theme.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+superfish:
+  css:
+    theme:
+      libraries/superfish/css/superfish.css: {}
+  js:
+    libraries/superfish/superfish.js: {}
