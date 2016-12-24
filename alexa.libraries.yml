@@ -14,3 +14,7 @@ superfish:
       libraries/superfish/css/superfish.css: {}
   js:
     libraries/superfish/superfish.js: {}
+
+fitvids:
+  js:
+    libraries/fitvids/jquery.fitvids.js: {}

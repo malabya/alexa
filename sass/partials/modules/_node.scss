@@ -1,0 +1,50 @@
+article {
+  &.node--view-mode-teaser {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 1px solid $light-black;
+    .node__title {
+      @include reset;
+      @include typecsset-font-size(20px);
+      margin-bottom: .5em;
+      a {
+        color: $black;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .node__content {
+    margin-top: .5em;
+    p {
+      @include reset;
+    }
+  }
+  .field--name-field-image {
+    float: left;
+    margin-right: 1em;
+  }
+  .field--name-field-tags {
+    margin-top: .5em;
+    .field__items {
+      margin: .5em 0;
+      .field__item {
+        display: inline;
+        margin-right: .5em;
+        a {
+          padding: .2em .3em;
+          background: $peter-river;
+          color: $white;
+          border: 1px solid $peter-river;
+        }
+      }
+    }
+  }
+  .node__links {
+    text-align: right;
+    @include typecsset-font-size(14px);
+    font-weight: $bold;
+  }
+}
