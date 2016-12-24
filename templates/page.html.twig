@@ -44,9 +44,18 @@
 #}
 <div id="page-wrapper">
   <div class="u-max-full-width" id="page">
-    <header id="header" class="pad1" role="heading">
+    <header id="header" role="heading">
+      {% if page.header_top %}
+        <div class="site-top">
+          <div class="container">
+            <div class="row">
+              <div class="u-full-width header-top">{{ page.header_top }}</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
       <div class="container">
-        <div class="row">
+        <div class="row site--header">
           <div class="four columns site-branding">{{ page.branding }}</div>
           <div class="eight columns site-heading">{{ page.header }}</div>
         </div>

@@ -14,6 +14,7 @@ base theme: classy
 regions:
   content: Content
   branding: Branding
+  header_top: Page Top
   header: Header
   featured: Featured
   highlighted: Highlighted

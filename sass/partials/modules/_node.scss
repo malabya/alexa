@@ -5,7 +5,7 @@ article {
     border-bottom: 1px solid $light-black;
     .node__title {
       @include reset;
-      @include typecsset-font-size(20px);
+      @include typecsset-font-size(22px);
       margin-bottom: .5em;
       a {
         color: $black;
@@ -23,8 +23,12 @@ article {
     }
   }
   .field--name-field-image {
-    float: left;
-    margin-right: 1em;
+    float: none;
+    clear: both;
+    @media screen and ($bp-larger-than-phablet) {
+      float: left;
+      margin-right: 1em;
+    }
   }
   .field--name-field-tags {
     margin-top: .5em;
@@ -43,8 +47,19 @@ article {
     }
   }
   .node__links {
-    text-align: right;
+    text-align: left;
     @include typecsset-font-size(14px);
     font-weight: $bold;
+    ul {
+      margin: 0;
+      li {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+    @media screen and ($bp-larger-than-phablet) {
+      text-align: right;
+    }
   }
 }

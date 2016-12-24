@@ -1,17 +1,52 @@
 .menu {
   @include reset;
-  font-weight: $bold;
+  font-weight: $normal;
+  text-transform: uppercase;
   .menu-item {
     display: inline-block;
     a {
+      background: transparent;
       line-height: 1em;
       padding: .5em;
       border: 1px solid transparentize(#fff, 1);
-      @include transition(.2s, border);
-      &:hover, &.is-active {
-        border: 1px solid;
+      @include transition(.2s, background);
+      margin-right: em(10);
+      &.is-active {
+        font-weight: $bold;
+        &:after {
+          content: '';
+          width: 55%;
+          height: 2px;
+          display: block;
+          background-color: $light-black;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        &:hover {
+          background: none;
+        }
+      }
+      &:hover {
+        background: $light-grey;
       }
     }
+    &.menu-item--expanded {
+      a {
+        padding-right: 25px;
+        .sf-sub-indicator {
+          &:after {
+            @include typecsset-font-size(8px);
+            top: -30%;
+            left: 30%;
+          }
+        }
+      }
+    }
+  }
+  .sub-menu {
+    text-transform: capitalize;
+    @include typecsset-font-size(18px);
+    background: $light-grey;
   }
 }
 

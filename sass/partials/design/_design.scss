@@ -6,12 +6,12 @@
 .site-branding {
   .site-branding__text {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     width: 80%;
     .site-name {
       @include typecsset-font-size(28px, 0);
       line-height: 1;
-      @media screen and ($bp-larger-than-phablet){
+      @media screen and ($bp-larger-than-phablet) {
         @include typecsset-font-size(32px, 0);
       }
     }
@@ -21,7 +21,11 @@
       font-style: italic;
     }
   }
-  img {
-    max-width: 3.5em;
+  .site-branding__logo {
+    display: inline-block;
+    vertical-align: middle;
+    img {
+      max-width: 3.5em;
+    }
   }
 }

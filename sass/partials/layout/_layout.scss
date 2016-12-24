@@ -14,7 +14,16 @@ body {
 }
 
 header {
+  .site-top {
+    margin-bottom: .5em;
+    padding: 0 0 .5em;
+    background: $light-grey;
+  }
   @include border(transparentize(#fff, 1), .1em, solid);
+  .site--header {
+    min-height: em(60);
+    max-height: em(60);
+  }
 }
 
 #footer {
