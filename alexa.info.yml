@@ -12,13 +12,13 @@ base theme: classy
 #Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
 
 regions:
-  content: Content
-  branding: Branding
   header_top: Page Top
-  header: Header
+  branding: Branding
+  navigation: Navigation
   featured: Featured
   highlighted: Highlighted
   left_sidebar: Left Sidebar
+  content: Content
   right_sidebar: Right Sidebar
   highlighted_bottom: Highlighted bottom
   content_bottom: Content bottom

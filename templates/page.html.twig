@@ -57,19 +57,19 @@
       <div class="container">
         <div class="row site--header">
           <div class="four columns site-branding">{{ page.branding }}</div>
-          <div class="eight columns site-heading">{{ page.header }}</div>
+          <div class="eight columns site-navigation">{{ page.navigation }}</div>
         </div>
       </div>
     </header>
 
-    {#Featured region#}
+    {#featured region#}
     {% if page.featured %}
       <section class="u-full-width mv2">
         <div class="hero"> {{ page.featured }}</div>
       </section>
     {% endif %}
 
-    {#Set content and bottom content classes#}
+    {#set content and bottom content classes#}
     {% set content_classes = [
     'layout-content',
     page.left_sidebar and page.right_sidebar ? 'one-third column',
@@ -86,7 +86,7 @@
     page.left_sidebar_bottom is empty and page.right_sidebar_bottom is empty ? 'u-full-width'
     ] %}
 
-    {#Main container#}
+    {#main container#}
     <section class="container content-top" id="main-content">
       <div class="row">
         {% if page.highlighted %}
@@ -101,7 +101,7 @@
                 {{ page.left_sidebar }}
               </aside>
             {% endif %}
-            <div {{ content_attributes.addClass(content_classes) }}>
+            <div {{ content_attributes.addclass(content_classes) }}>
               {% block content %}
                 <a id="main-content"></a>
                 {{ page.content }}
@@ -131,7 +131,7 @@
                   {{ page.left_sidebar_bottom }}
                 </aside>
               {% endif %}
-              <div {{ attributes.addClass(content_bottom_classes) }}>
+              <div {{ attributes.addclass(content_bottom_classes) }}>
                 {{ page.content_bottom }}
               </div>
               {% if page.right_sidebar_bottom %}
@@ -145,14 +145,14 @@
       </section>
     {% endif %}
 
-    {#Featured bottom#}
+    {#featured bottom#}
     {% if page.featured_bottom %}
       <section class="u-full-width mv2 zero-margin-bottom">
         <div class="hero featured-bottom"> {{ page.featured_bottom }}</div>
       </section>
     {% endif %}
 
-    {#Set footer classes#}
+    {#set footer classes#}
     {% set footer_classes = [
     'footer-blocks',
     page.footer_first and page.footer_second and page.footer_third and page.footer_fourth ? 'three columns',
@@ -170,7 +170,7 @@
     page.footer_first is empty and page.footer_second and page.footer_third is empty and page.footer_fourth is empty ? 'u-full-width',
     ] %}
 
-    {#Footer region#}
+    {#footer region#}
     <footer class="footer pad2 mv1 zero-margin-bottom" id="footer">
       <div class="container">
         <div class="id">
@@ -181,16 +181,16 @@
           {% endif %}
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
             <div class="site-footer clearfix">
-              <div {{ attributes.addClass(footer_classes) }}>
+              <div {{ attributes.addclass(footer_classes) }}>
                 {{ page.footer_first }}
               </div>
-              <div {{ attributes.addClass(footer_classes) }}>
+              <div {{ attributes.addclass(footer_classes) }}>
                 {{ page.footer_second }}
               </div>
-              <div {{ attributes.addClass(footer_classes) }}>
+              <div {{ attributes.addclass(footer_classes) }}>
                 {{ page.footer_third }}
               </div>
-              <div {{ attributes.addClass(footer_classes) }}>
+              <div {{ attributes.addclass(footer_classes) }}>
                 {{ page.footer_fourth }}
               </div>
             </div>

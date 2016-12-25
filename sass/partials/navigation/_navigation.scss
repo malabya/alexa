@@ -3,7 +3,12 @@
   font-weight: $normal;
   text-transform: uppercase;
   .menu-item {
-    display: inline-block;
+    display: block;
+    float: none;
+    clear: both;
+    @media screen and ($bp-larger-than-phablet) {
+      display: inline-block;
+    }
     a {
       background: transparent;
       line-height: 1em;
@@ -13,14 +18,16 @@
       margin-right: em(10);
       &.is-active {
         font-weight: $bold;
-        &:after {
-          content: '';
-          width: 55%;
-          height: 2px;
-          display: block;
-          background-color: $light-black;
-          margin-top: 5px;
-          margin-bottom: 5px;
+        @media screen and ($bp-larger-than-phablet) {
+          &:after {
+            content: '';
+            width: 55%;
+            height: 2px;
+            display: block;
+            background-color: $light-black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
         }
         &:hover {
           background: none;
