@@ -18,8 +18,9 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-<div class="sf-menu-wrapper">
-    <div class="expand hide-tablet hide-desktop hide-desktophd"></div>
+<div class="user-menu">
+  <div class="sf-menu-wrapper">
+    <div class="expand user-icon hide-tablet hide-desktop hide-desktophd"></div>
     <div class="collapse hide-tablet hide-desktop hide-desktophd"></div>
     {% import _self as menus %}
 
@@ -35,26 +36,27 @@
     {% if items %}
     {% if menu_level == 0 %}
     <ul{{ attributes.addClass('menu sf-menu hide-mobile') }}>
-        {% else %}
-        <div class="mobnav-subarrow"></div>
-        <ul class="menu sub-menu" data-menu-level="{{ menu_level }}">
-            {% endif %}
-            {% for item in items %}
-                {% set classes = [
-                'menu-item',
-                item.is_expanded ? 'menu-item--expanded',
-                item.is_collapsed ? 'menu-item--collapsed',
-                item.in_active_trail ? 'menu-item--active-trail',
-                ] %}
-                <li{{ item.attributes.addClass(classes) }}>
-                    {{ link(item.title, item.url) }}
-                    {% if item.below %}
-                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+      {% else %}
+      <div class="mobnav-subarrow"></div>
+      <ul class="menu sub-menu" data-menu-level="{{ menu_level }}">
         {% endif %}
-        {% endmacro %}
+        {% for item in items %}
+          {% set classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+          ] %}
+          <li{{ item.attributes.addClass(classes) }}>
+            {{ link(item.title, item.url) }}
+            {% if item.below %}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endmacro %}
 
+  </div>
 </div>

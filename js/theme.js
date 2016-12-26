@@ -18,21 +18,21 @@
 
   Drupal.behaviors.responsiveSuperfish = {
     attach: function () {
-      $("#close").hide();
+      $(".collapse").hide();
 
-      $('#hamburger').click(
+      $('.expand').click(
         function () {
           $(this).hide();
-          $("#close").show();
-          $(".sf-menu").addClass("mobile-active");
+          $(this).next().show();
+          $(this).next().next().addClass("mobile-active");
         }
       );
 
-      $("#close").click(
+      $(".collapse").click(
         function () {
           $(this).hide();
-          $("#hamburger").show();
-          $(".sf-menu").removeClass("mobile-active");
+          $(this).prev().show();
+          $(this).next().removeClass("mobile-active");
         }
       );
 
@@ -44,7 +44,7 @@
   };
 
   // Fitvids plugin
-  Drupal.behaviors.responsiveSuperfish = {
+  Drupal.behaviors.fitVids = {
     attach: function () {
       $("#page").fitVids();
     }

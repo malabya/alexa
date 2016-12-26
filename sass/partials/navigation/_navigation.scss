@@ -60,3 +60,78 @@
 .menu--account {
   float: right;
 }
+
+.menu--main, .user-menu {
+  .sf-menu-wrapper {
+    display: table;
+    min-height: 40px;
+    position: relative;
+    width: 100%;
+    @media screen and ($bp-smaller-than-phablet) {
+      .expand {
+        display: block;
+        vertical-align: middle;
+        background: url(../../alexa/images/hamburger.svg) no-repeat;
+        background-size: contain;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        margin-top: .6em;
+      }
+      .collapse {
+        display: none;
+        vertical-align: middle;
+        background: url(../../alexa/images/ex.svg) no-repeat;
+        background-size: contain;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        margin-top: .6em;
+        margin-bottom: 1.2em;
+      }
+      .sf-menu {
+        &.mobile-active {
+          display: block !important;
+          min-width: 80% !important;
+          .menu-item {
+            display: block;
+            float: none;
+            clear: both;
+            .mobnav-subarrow {
+              display: block;
+              background-color: #0f3975;
+              opacity: 0;
+              height: 100%;
+              width: 3em;
+              position: absolute;
+              top: 0;
+              right: .1em;
+              cursor: pointer;
+            }
+            ul {
+              display: none !important;
+              position: static !important;
+              width: 100%;
+              margin: 0;
+              border: none;
+            }
+            &.xpopdrop {
+              ul {
+                display: block !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.user-menu {
+  .expand {
+    background: url(../../alexa/images/user.svg) no-repeat !important;
+  }
+  .collapse {
+    float: right;
+  }
+}
