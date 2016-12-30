@@ -11,6 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $title-font;
   font-weight: $bold;
+  color: $charcoal;
 }
 
 h1 {
@@ -100,7 +101,7 @@ a {
   color: $peter-river;
   @include transition(.2s, color);
   &:hover, &:focus {
-    color: $light-black
+    color: $charcoal
   }
   &.button {
     padding: 1rem;

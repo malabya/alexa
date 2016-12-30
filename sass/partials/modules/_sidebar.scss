@@ -1,6 +1,15 @@
 .sidebar {
+  &.left-sidebar {
+    padding-right: 1em;
+    border-right: 1px solid $light-grey;
+  }
+  &.right-sidebar {
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 1px solid $light-grey;
+  }
   .block {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     display: inline-block;
   }
 }

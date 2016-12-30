@@ -2,7 +2,7 @@ article {
   &.node--view-mode-teaser {
     margin-bottom: 1em;
     padding: 1em;
-    border-bottom: 1px solid $light-black;
+    border-bottom: 1px solid $charcoal;
     .node__title {
       @include reset;
       @include typecsset-font-size(22px);

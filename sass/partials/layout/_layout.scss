@@ -20,6 +20,7 @@ header {
     background: $light-grey;
   }
   @include border(transparentize(#fff, 1), .1em, solid);
+  margin-bottom: 1em;
   .site--header {
     min-height: em(60);
     max-height: em(60);

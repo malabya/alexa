@@ -1,0 +1,8 @@
+.block {
+  .block-title {
+    @include typecsset-font-size(22px);
+    border-bottom: 1px dotted $charcoal;
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+  }
+}

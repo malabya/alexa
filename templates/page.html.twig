@@ -97,7 +97,7 @@
         <div class="container u-full-width pad2">
           <div class="row">
             {% if page.left_sidebar %}
-              <aside class="one-third column sidebar">
+              <aside class="one-third column sidebar left-sidebar">
                 {{ page.left_sidebar }}
               </aside>
             {% endif %}
@@ -108,7 +108,7 @@
               {% endblock %}
             </div>
             {% if page.right_sidebar %}
-              <aside class="one-third column sidebar">
+              <aside class="one-third column sidebar right-sidebar">
                 {{ page.right_sidebar }}
               </aside>
             {% endif %}
@@ -127,7 +127,7 @@
           <div class="container u-full-width">
             <div class="row">
               {% if page.left_sidebar_bottom %}
-                <aside class="one-third column sidebar">
+                <aside class="one-third column sidebar left-sidebar">
                   {{ page.left_sidebar_bottom }}
                 </aside>
               {% endif %}
@@ -135,7 +135,7 @@
                 {{ page.content_bottom }}
               </div>
               {% if page.right_sidebar_bottom %}
-                <aside class="one-third column sidebar">
+                <aside class="one-third column sidebar right-sidebar">
                   {{ page.right_sidebar_bottom }}
                 </aside>
               {% endif %}
