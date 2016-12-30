@@ -1,0 +1,29 @@
+.block-search {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  form {
+    input[type="search"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid transparentize($light-black, 0.7);
+      border-radius: 0 !important;
+      width: 100%;
+      background: none;
+      color: #000;
+      padding: em(6) em(65) em(6) em(8);
+      background: transparent;
+    }
+    .button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      border-radius: 0;
+      background: $peter-river;
+      color: $light-grey;
+      padding: 0 .5em;
+    }
+  }
+}

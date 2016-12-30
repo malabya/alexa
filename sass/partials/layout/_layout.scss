@@ -23,6 +23,14 @@ header {
   .site--header {
     min-height: em(60);
     max-height: em(60);
+    @media screen and ($bp-larger-than-phablet){
+      display: table;
+      width: 100%;
+      .columns {
+        float: none;
+        display: table-cell;
+      }
+    }
   }
 }
 
