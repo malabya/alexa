@@ -181,16 +181,16 @@
           {% endif %}
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
             <div class="site-footer clearfix">
-              <div {{ attributes.addclass(footer_classes) }}>
+              <div {{ attributes.setattribute('class', footer_classes) }}>
                 {{ page.footer_first }}
               </div>
-              <div {{ attributes.addclass(footer_classes) }}>
+              <div {{ attributes.setattribute('class', footer_classes) }}>
                 {{ page.footer_second }}
               </div>
-              <div {{ attributes.addclass(footer_classes) }}>
+              <div {{ attributes.setattribute('class', footer_classes) }}>
                 {{ page.footer_third }}
               </div>
-              <div {{ attributes.addclass(footer_classes) }}>
+              <div {{ attributes.setattribute('class', footer_classes) }}>
                 {{ page.footer_fourth }}
               </div>
             </div>
