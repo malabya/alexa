@@ -11,5 +11,15 @@
   .block {
     margin-bottom: 1.5em;
     display: inline-block;
+    background: $light-grey;
+    .block-title {
+      padding: 1em;
+      margin-bottom: 0;
+      background: $charcoal;
+      color: $light-grey;
+    }
+    .block-content {
+      padding: 1em;
+    }
   }
 }
