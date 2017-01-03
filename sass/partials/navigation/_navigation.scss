@@ -1,6 +1,6 @@
 .menu {
   @include reset;
-  font-weight: $normal;
+  font-weight: $bold;
   text-transform: uppercase;
   .menu-item {
     display: block;
@@ -15,7 +15,6 @@
       padding: .5em;
       border: 1px solid transparentize(#fff, 1);
       @include transition(.2s, background);
-      margin-right: em(10);
       &.is-active {
         font-weight: $bold;
         @media screen and ($bp-larger-than-phablet) {
@@ -25,7 +24,7 @@
             height: 2px;
             display: block;
             background-color: $charcoal;
-            margin-top: 5px;
+            margin-top: -15px;
             margin-bottom: 5px;
           }
         }
@@ -33,9 +32,14 @@
           background: none;
         }
       }
-      &:hover {
-        background: $light-grey;
+      &:hover{
+        background: transparent;
+        color: lighten($charcoal, 15%);
       }
+    }
+    &.sfHover > a {
+      background: $charcoal;
+      color: $light-grey;
     }
     &.menu-item--expanded {
       a {
@@ -51,9 +55,19 @@
     }
   }
   .sub-menu {
+    @include border(transparentize($charcoal, 0.5), 0em, solid);
+    border-top-left-radius: 0 !important;
     text-transform: capitalize;
     @include typecsset-font-size(18px);
-    background: $light-grey;
+    background: $charcoal;
+    top: rem(78) !important;
+    a {
+      color: $light-grey;
+      &:hover {
+        background: transparent;
+        color: white;
+      }
+    }
   }
 }
 
@@ -132,5 +146,23 @@
   }
   .collapse {
     float: right;
+  }
+}
+
+.menu--main {
+  .menu-item {
+    @include typecsset-font-size(18px);
+    a {
+      height: rem(78);
+      line-height: rem(60);
+    }
+  }
+  .sub-menu {
+    a {
+      margin-top: rem(5);
+      margin-bottom: rem(5);
+      height: 2em;
+      line-height: 1em;
+    }
   }
 }

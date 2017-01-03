@@ -116,3 +116,13 @@ a {
     list-style: circle;
   }
 }
+
+.hero-title, .teaser-title, .block-title {
+  font-size: 135%;
+  a {
+    color: $charcoal;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

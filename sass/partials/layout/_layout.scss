@@ -15,21 +15,27 @@ body {
 
 header {
   .site-top {
-    margin-bottom: .5em;
+    margin-bottom: 0;
     padding: 0 0 .5em;
     background: $light-grey;
   }
-  @include border(transparentize(#fff, 1), .1em, solid);
+  @include border(transparentize(#fff, 1), 0em, solid);
   margin-bottom: 1em;
   .site--header {
-    min-height: em(60);
-    max-height: em(60);
+    min-height: rem(60);
+    max-height: rem(60);
     @media screen and ($bp-larger-than-phablet){
       display: table;
       width: 100%;
       .columns {
         float: none;
         display: table-cell;
+        vertical-align: middle;
+        padding: .5em 0;
+        &.site-navigation {
+          vertical-align: top;
+          padding: 0;
+        }
       }
     }
   }

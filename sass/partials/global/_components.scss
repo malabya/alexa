@@ -124,3 +124,11 @@ img {
 .small {
   font-size: 85%;
 }
+
+.italics {
+  font-style: italic;
+}
+
+.muted{
+  color: lighten($black, 15%);
+}
