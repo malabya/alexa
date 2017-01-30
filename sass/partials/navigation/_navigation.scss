@@ -151,7 +151,7 @@
 
 .menu--main {
   .menu-item {
-    @include typecsset-font-size(18px);
+    @include typecsset-font-size(14px);
     a {
       height: rem(78);
       line-height: rem(60);
